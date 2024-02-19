@@ -14,7 +14,6 @@ services:
       - 8080:8080
     depends_on:
       - mysql
-      - kafka
 
   mysql:
     image: mysql:5.7
@@ -25,7 +24,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - .docker/mysql:/var/lib/mysql
+      - .docker/db:/docker-entrypoint-initdb.d
   postgres:
     image: bitnami/postgresql:latest
     ports:
