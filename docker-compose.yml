@@ -12,6 +12,9 @@ services:
     image: carlos0406/walletcore
     ports:
       - 8080:8080
+    depends_on:
+      - mysql
+      - kafka
 
   mysql:
     image: mysql:5.7
